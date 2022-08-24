@@ -10,13 +10,13 @@ export const FrontendStack = ({stack, app}) => {
 
   // Define our React app
   const site = new ReactStaticSite(stack, 'ReactSite', {
-    customDomain:
-      app.stage === 'prod'
-        ? {
-            domainName: 'scratch-sayd.net',
-            domainAlias: 'www.scratch-sayd.net',
-          }
-        : undefined,
+    // customDomain:
+    //   app.stage === 'prod'
+    //     ? {
+    //         domainName: 'scratch-sayd.net',
+    //         domainAlias: 'www.scratch-sayd.net',
+    //       }
+    //     : undefined,
     path: 'frontend',
     // Pass in our environment variables
     environment: {
