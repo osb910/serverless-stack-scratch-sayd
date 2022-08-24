@@ -1,0 +1,29 @@
+{
+  "name": "notes-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "sst start",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "console": "sst console",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@serverless-stack/cli": "^1.8.4",
+    "@serverless-stack/resources": "^1.8.4",
+    "@tsconfig/node16": "^1.0.3",
+    "aws-cdk-lib": "2.32.0",
+    "typescript": "^4.7.4",
+    "vitest": "^0.20.3"
+  },
+  "workspaces": [
+    "services"
+  ],
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}
