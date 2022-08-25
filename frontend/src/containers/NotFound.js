@@ -1,44 +1,61 @@
 import React, {useContext} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import AppContext from '../store/app-context';
 
 import data from '../store/content/misc';
 
 const StyledNotFound = styled.div`
+  width: 250px;
   max-width: 300px;
-  margin: 0 auto;
-  padding-top: 100px;
+  margin: 7rem auto;
+  padding: 0.5em;
   text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
 
+  ${({lang}) =>
+    lang === 'ar'
+      ? css`
+          &::before {
+            content: '٤٠٤';
+            font-size: 25rem;
+            top: 4rem;
+          }
+        `
+      : css`
+          &::before {
+            content: '404';
+            font-size: 20rem;
+            top: 5rem;
+          }
+        `};
+
   &::before {
-    content: '404';
-    /* content: '٤٠٤'; */
+    width: 380px;
+    margin: 0.5em auto;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 20%;
     left: 35%;
-    height: 60vh;
-    transform: rotate(-20deg);
+    height: 30vh;
     z-index: -1;
-    font-size: 20rem;
     color: #888;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   & h3 {
-    line-height: 1.4;
+    line-height: 1.5;
+    font-size: 1.8rem;
   }
 `;
 
 const NotFound = () => {
   const {lang} = useContext(AppContext);
-  const content = data[lang];
+  const uiText = data[lang];
   return (
-    <StyledNotFound>
-      <h3>{content.notFound}</h3>
+    <StyledNotFound lang={lang}>
+      <h3>{uiText.notFound}</h3>
     </StyledNotFound>
   );
 };
