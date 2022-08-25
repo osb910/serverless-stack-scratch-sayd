@@ -1,7 +1,7 @@
 // import uuid from 'uuid';
 import handler from '../util/handler';
 import dynamoDb from '../util/dynamodb';
-const uuid = require('uuid/v4');
+const uuid = require('uuid');
 
 export const main = handler(async evt => {
   // Request body is passed in as a JSON encoded string in 'evt.body'
