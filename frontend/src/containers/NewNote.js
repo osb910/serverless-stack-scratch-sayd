@@ -38,12 +38,10 @@ const NewNote = () => {
     file.current = evt.target.files[0];
   };
 
-  const createNote = async note => {
-    console.log(note);
-    await API.post('notes', '/notes', {
+  const createNote = note =>
+    API.post('notes', '/notes', {
       body: note,
     });
-  };
 
   const submit = async evt => {
     evt.preventDefault();

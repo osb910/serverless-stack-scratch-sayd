@@ -6,12 +6,12 @@ let logs;
 // Log AWS SDK calls
 AWS.config.logger = {log: debug};
 
-const debug = () => {
+export default function debug() {
   logs.push({
     date: new Date(),
     string: util.format.apply(null, arguments),
   });
-};
+}
 
 export const init = evt => {
   logs = [];
@@ -28,5 +28,3 @@ export const flush = err => {
   logs.forEach(({date, string}) => console.debug(date, string));
   console.error(err);
 };
-
-export default debug;
