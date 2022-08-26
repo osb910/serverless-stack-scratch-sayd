@@ -15,17 +15,17 @@ const Signup = props => {
   const {lang, isAuthented, setIsAuthented} = useContext(AppContext);
   const uiText = data[lang];
 
+  const {state} = useLocation();
   const [fields, changeFields] = useFormFields({
-    email: '',
+    email: state?.email || '',
     password: '',
     confirmPassword: '',
     confirmationCode: '',
   });
 
   const nav = useNavigate();
-  const {state} = useLocation();
 
-  const [newUser, setNewUser] = useState(state?.email || null);
+  const [newUser, setNewUser] = useState(state?.newUser || null);
   const [isLoading, setIsLoading] = useState(false);
   const [submitMsg, setSubmitMsg] = useState('');
 
@@ -118,6 +118,7 @@ const Signup = props => {
       <Form.Group controlId='confirmationCode' size='lg' className='group'>
         <Form.Label>{uiText.confCode}</Form.Label>
         <Form.Control
+          dir='auto'
           autoFocus
           type='tel'
           onChange={changeFields}

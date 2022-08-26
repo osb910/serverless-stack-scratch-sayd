@@ -20,6 +20,7 @@ const data = {
     unconfirmedUserMsg: 'You have to complete your sign up...',
     tooMuchConfReq: 'Too much requests. Try again after 15 minutes.',
     netError: 'Check your network connection.',
+    userNotFound: `We don't know you. Come signup...`,
     settings: 'Settings',
   },
   ar: {
@@ -44,6 +45,7 @@ const data = {
     unconfirmedUserMsg: 'لا بد أن تُتمَّ التسجيل...',
     tooMuchConfReq: 'أكثرتَ الطلب. اصبر ربع ساعة ثم أعِد الكرّة.',
     netError: 'راجع اتصالك بالشبكة.',
+    userNotFound: `لا نعرفك، تعالَ واركب معنا...`,
     settings: 'الضبط',
   },
 };

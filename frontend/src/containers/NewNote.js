@@ -38,10 +38,12 @@ const NewNote = () => {
     file.current = evt.target.files[0];
   };
 
-  const createNote = note =>
-    API.post('notes', '/notes', {
+  const createNote = async note => {
+    console.log(note);
+    await API.post('notes', '/notes', {
       body: note,
     });
+  };
 
   const submit = async evt => {
     evt.preventDefault();
@@ -53,10 +55,11 @@ const NewNote = () => {
     setIsLoading(true);
 
     try {
+      let attachment;
       if (file.current) {
-        const attachment = await s3Upload(file.current);
-        await createNote({name: '', content, attachment});
+        attachment = await s3Upload(file.current);
       }
+      await createNote({name: '', content, attachment});
       setTimeout(() => {
         nav('/');
       }, 1000);

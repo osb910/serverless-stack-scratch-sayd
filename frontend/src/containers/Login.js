@@ -40,14 +40,23 @@ const Login = () => {
       setSubmitMsg(uiText.unconfirmedUserMsg);
       setTimeout(() => {
         setIsLoading(false);
-        nav('/signup', {state: {email: fields.email}});
-      }, 1500);
+        nav('/signup', {state: {email: fields.email, newUser: true}});
+      }, 2000);
     } catch (err) {
       console.log(err.name);
       if (err.name === 'LimitExceededException') {
         onExcConfReq();
       }
     }
+  };
+
+  // refactor
+  const redirectToSignup = () => {
+    setSubmitMsg(uiText.userNotFound);
+    setTimeout(() => {
+      setIsLoading(false);
+      nav('/signup', {state: {email: fields.email, newUser: false}});
+    }, 2000);
   };
 
   const submit = async evt => {
@@ -65,6 +74,7 @@ const Login = () => {
       }, 1500);
     } catch (err) {
       console.log(err.name, err.message);
+      err.name === 'UserNotFoundException' && redirectToSignup();
       err.name === 'UserNotConfirmedException' && (await resendConfirmation());
       err.message === 'Network error' && setSubmitMsg(uiText.netError);
       setIsLoading(false);
