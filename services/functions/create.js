@@ -1,5 +1,5 @@
-import * as uuid from 'uuid';
 import handler from '../util/handler';
+import * as uuid from 'uuid';
 import dynamoDb from '../util/dynamodb';
 // const v4 = require('uuid').v4;
 
