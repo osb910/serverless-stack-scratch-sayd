@@ -32,10 +32,9 @@ const data = {
     email: 'بريدك',
     signupEmailText: 'عنوانك محفوظ',
     pass: 'أمارتُك',
-    confirmPass: 'أثبِت أمارتَك',
+    confirmPass: 'أكِّد أمارتَك',
     loginPassText: 'أأنت أنت؟',
-    signupPassText:
-      'سرُّك مكتوم لا يطّلع عليه إلا ربُّ العالمين والخادوم الأمين.',
+    signupPassText: 'لا يطّلع عليها إلا ربُّ العالمين والخادوم الأمين.',
     verify: 'تحقَّق',
     userExists: `إنا نعرفك، لعلك تريد أن تفتح سِجلَّك...`,
     confCode: 'رمز التحقق',

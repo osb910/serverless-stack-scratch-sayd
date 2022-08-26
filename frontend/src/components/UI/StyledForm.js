@@ -7,8 +7,17 @@ const StyledForm = styled.section`
   }
 
   .rtl & .text-muted * {
-    font-size: 1.4;
+    /* font-size: 1.4; */
     font-family: Lotus;
+  }
+
+  .form-text {
+    display: inline-block;
+    margin: 0.4em;
+  }
+
+  .rtl & .form-text {
+    font-size: 1.15rem;
   }
 
   & .group {

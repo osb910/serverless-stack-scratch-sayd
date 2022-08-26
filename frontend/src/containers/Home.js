@@ -19,17 +19,15 @@ const StyledHome = styled.main`
     font-weight: 600;
   }
 
-  .rtl & :not(h1) :not(h2) {
-    font-family: Lotus;
-  }
   .rtl & p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
-  .rtl .pencil-icon {
-    display: inline-block;
-    border: 1px solid red;
-    transform: scaleX(-1);
+  .note-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
   }
 `;
 
@@ -63,7 +61,7 @@ const Home = () => {
   const notesDisplay = notes.map(({noteId, content, createdAt}) => (
     <LinkContainer key={noteId} to={`/notes/${noteId}`}>
       <ListGroup.Item action dir='auto'>
-        <span className='font-weight-bold'>
+        <span className='font-weight-bold note-title'>
           {content.trim().split('\n')[0]}
         </span>
         <br />
@@ -78,7 +76,7 @@ const Home = () => {
     </LinkContainer>
   ));
 
-  const renderNotesList = notes => {
+  const renderNotesList = () => {
     return (
       <>
         <LinkContainer to='/notes/new'>
@@ -103,7 +101,7 @@ const Home = () => {
     <section className='notes'>
       <h2 className='pb-3 mt-4 mb-3 border-bottom'>{uiText.yourNotes}</h2>
       {isLoading && <LoadingSpinner lang={lang} />}
-      <ListGroup>{!isLoading && renderNotesList(notes)}</ListGroup>
+      <ListGroup>{!isLoading && renderNotesList()}</ListGroup>
     </section>
   );
   return <StyledHome>{isAuthented ? notesList : lander}</StyledHome>;

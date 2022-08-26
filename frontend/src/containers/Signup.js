@@ -124,7 +124,9 @@ const Signup = props => {
           onChange={changeFields}
           value={fields.confirmationCode}
         />
-        <Form.Text muted>{uiText.confCodeText}</Form.Text>
+        <Form.Text muted className='form-text'>
+          {uiText.confCodeText}
+        </Form.Text>
       </Form.Group>
       <Form.Group className='group'>
         <LoaderButton
@@ -138,7 +140,9 @@ const Signup = props => {
         >
           {uiText.verify}
         </LoaderButton>
-        {submitMsg && <Form.Text className='text-muted'>{submitMsg}</Form.Text>}
+        {submitMsg && (
+          <Form.Text className='text-muted form-text'>{submitMsg}</Form.Text>
+        )}
       </Form.Group>
     </Form>
   );
@@ -163,7 +167,9 @@ const Signup = props => {
           onChange={changeFields}
           dir='auto'
         />
-        <Form.Text className='text-muted'>{uiText.signupPassText}</Form.Text>
+        <Form.Text className='text-muted form-text'>
+          {uiText.signupPassText}
+        </Form.Text>
       </Form.Group>
       <Form.Group controlId='confirmPassword' size='lg' className='group'>
         <Form.Label>{uiText.confirmPass}</Form.Label>
@@ -186,7 +192,9 @@ const Signup = props => {
         >
           {uiText.signup}
         </LoaderButton>
-        {submitMsg && <Form.Text className='text-muted'>{submitMsg}</Form.Text>}
+        {submitMsg && (
+          <Form.Text className='text-muted form-text'>{submitMsg}</Form.Text>
+        )}
       </Form.Group>
     </Form>
   );

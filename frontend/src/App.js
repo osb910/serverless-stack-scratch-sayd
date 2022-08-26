@@ -31,26 +31,28 @@ const StyledApp = styled.div`
   text-align: center;
   transition: all 400ms ease;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    ${({lang}) =>
-      lang === 'ar'
-        ? css`
-            font-family: 'Uthman Taha';
-          `
-        : css`
-            font-family: 'PT Serif', serif;
-          `};
-  }
-
   &.rtl {
     direction: rtl;
     font-family: 'Lotus';
     font-size: 1.15rem;
+  }
+
+  :not(.rtl) h1,
+  :not(.rtl) h2,
+  :not(.rtl) h3,
+  :not(.rtl) h4,
+  :not(.rtl) h5,
+  :not(.rtl) h6 {
+    font-family: 'PT Serif', serif;
+  }
+
+  &.rtl h1,
+  &.rtl h2,
+  &.rtl h3,
+  &.rtl h4,
+  &.rtl h5,
+  &.rtl h6 {
+    font-family: 'Uthman Taha';
   }
 
   /* input[type='text'], */

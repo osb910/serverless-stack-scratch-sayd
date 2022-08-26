@@ -9,7 +9,7 @@ const data = {
   ar: {
     appName: 'صيد الخاطر',
     appDesc: 'العلم صيدٌ والكتابة قيدُه',
-    yourNotes: 'صيد خاطرك',
+    yourNotes: 'صيدُ خاطرك',
     createNote: 'ابدأ مفكرة',
     created: 'أُنشئت في: ',
   },

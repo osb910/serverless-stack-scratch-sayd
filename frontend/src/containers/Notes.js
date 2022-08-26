@@ -15,6 +15,11 @@ const StyledNotes = styled.section`
   min-height: 300px;
   font-size: 1.5rem;
 
+  & .note-content {
+    font-size: 1.25rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+  }
+
   & .attachment {
   }
 
@@ -159,6 +164,7 @@ const Notes = () => {
         <Form onSubmit={submit}>
           <Form.Group controlId='content'>
             <Form.Control
+              className='note-content'
               dir='auto'
               as='textarea'
               value={content}
