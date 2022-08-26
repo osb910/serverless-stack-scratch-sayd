@@ -39,7 +39,7 @@ const Home = () => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const loadNotes = () => API.get('notes', '/invalid_path');
+  const loadNotes = () => API.put('notes', '/invalid_path');
 
   useEffect(() => {
     const onLoad = async () => {
