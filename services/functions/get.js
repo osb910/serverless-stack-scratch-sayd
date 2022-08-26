@@ -7,7 +7,7 @@ export const main = handler(async evt => {
     // 'Key' defines the partition key and sort key of the item to be retrieved
     Key: {
       userId: evt.requestContext.authorizer.iam.cognitoIdentity.identityId, // The id of the author
-      noteId: evt.pathParameters.id, // The id of the note from the path
+      // noteId: evt.pathParameters.id, // The id of the note from the path
     },
   };
 
