@@ -7,9 +7,9 @@ import dynamoDb from '../util/dynamodb';
 // };
 
 // some faulty code
-dynamoDb.notExist();
+// dynamoDb.notExist();
 
-export const main = handler(async evt => {
+export const main2 = handler(async evt => {
   const params = {
     TableName: process.env.TABLE_NAME,
     // 'Key' defines the partition key and sort key of the item to be retrieved
