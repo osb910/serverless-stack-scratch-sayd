@@ -8,7 +8,6 @@ export const ApiStack = ({stack, app}) => {
   const api = new Api(stack, 'Api', {
     // customDomain: app.stage === 'prod' ? 'api.scratch-sayd.net' : undefined,
     defaults: {
-      // memorySize: 128,
       authorizer: 'iam',
       function: {
         permissions: [table],
