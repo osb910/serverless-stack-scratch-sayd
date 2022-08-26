@@ -1,11 +1,12 @@
-import handler from '../util/handler';
 import * as uuid from 'uuid';
+import handler from '../util/handler';
 import dynamoDb from '../util/dynamodb';
 // const v4 = require('uuid').v4;
 
 export const main = handler(async evt => {
   // Request body is passed in as a JSON encoded string in 'evt.body'
   const data = JSON.parse(evt.body);
+  console.log(data);
 
   const params = {
     TableName: process.env.TABLE_NAME,

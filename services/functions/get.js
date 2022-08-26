@@ -1,10 +1,13 @@
 import handler from '../util/handler';
 import dynamoDb from '../util/dynamodb';
 
-const allocMem = () => {
-  let bigList = Array(4096000).fill(1);
-  return bigList.concat(allocMem());
-};
+// const allocMem = () => {
+//   let bigList = Array(4096000).fill(1);
+//   return bigList.concat(allocMem());
+// };
+
+// some faulty code
+dynamoDb.notExist();
 
 export const main = handler(async evt => {
   const params = {
@@ -21,7 +24,7 @@ export const main = handler(async evt => {
     throw new Error('Item not found.');
   }
 
-  allocMem();
+  // allocMem();
 
   // Set a timeout
   // await new Promise(resolve => setTimeout(resolve, 10000));
