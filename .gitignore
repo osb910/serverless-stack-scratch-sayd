@@ -11,5 +11,3 @@ node_modules
 # local env files
 .env*.local
 
-
-/stacks/test

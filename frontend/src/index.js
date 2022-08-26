@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Amplify} from 'aws-amplify';
+import {initSentry} from './store/errorLib';
 import config from './config';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {AppProvider} from './store/app-context';
+
+initSentry();
+
+// return <button onClick={methodDoesNotExist}>Break the world</button>;
 
 Amplify.configure({
   Auth: {
