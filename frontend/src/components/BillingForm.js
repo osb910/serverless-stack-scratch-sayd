@@ -8,9 +8,15 @@ import {useFormFields} from '../store/hooksLib';
 import data from '../store/content/billing';
 
 const StyledBillingForm = styled.section`
-  .rtl & :not(btn) {
-    font-family: Lotus;
+  .rtl & :not(.btn) {
     font-size: 1.2rem;
+  }
+
+  & .label {
+    margin-top: 0.2em;
+  }
+  .rtl & .label {
+    font-size: 1.3rem;
   }
 
   .rtl & input {
@@ -90,7 +96,7 @@ const BillingForm = ({isLoading, onSubmit}) => {
     <StyledBillingForm>
       <Form onSubmit={submit}>
         <Form.Group size='lg' controlId='storage'>
-          <Form.Label>{uiText.storage}</Form.Label>
+          <Form.Label className='label'>{uiText.storage}</Form.Label>
           <Form.Control
             className='storage-input'
             dir='auto'
@@ -103,7 +109,7 @@ const BillingForm = ({isLoading, onSubmit}) => {
         </Form.Group>
         <hr />
         <Form.Group size='lg' controlId='name'>
-          <Form.Label>{uiText.cardName}</Form.Label>
+          <Form.Label className='label'>{uiText.cardName}</Form.Label>
           <Form.Control
             dir='auto'
             type='text'
@@ -112,7 +118,7 @@ const BillingForm = ({isLoading, onSubmit}) => {
             placeholder={uiText.cardNamePH}
           />
         </Form.Group>
-        <Form.Label>{uiText.cardInfo}</Form.Label>
+        <Form.Label className='label'>{uiText.cardInfo}</Form.Label>
         <CardElement
           className='card-field'
           dir='ltr'

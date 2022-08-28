@@ -100,9 +100,9 @@ const Login = () => {
             onChange={changeFields}
             dir='auto'
           />
-          <Form.Text className='text-muted form-text'>
+          {/* <Form.Text className='text-muted form-text'>
             {uiText.loginPassText}
-          </Form.Text>
+          </Form.Text> */}
         </Form.Group>
         <Form.Group className='group'>
           <LoaderButton

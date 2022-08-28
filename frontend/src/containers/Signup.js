@@ -55,9 +55,7 @@ const Signup = props => {
       }, 2000);
     } catch (err) {
       console.log(err);
-      if (err.name === 'LimitExceededException') {
-        onExcConfReq();
-      }
+      err.name === 'LimitExceededException' && onExcConfReq();
     }
   };
 
@@ -167,9 +165,9 @@ const Signup = props => {
           onChange={changeFields}
           dir='auto'
         />
-        <Form.Text className='text-muted form-text'>
+        {/* <Form.Text className='text-muted form-text'>
           {uiText.signupPassText}
-        </Form.Text>
+        </Form.Text> */}
       </Form.Group>
       <Form.Group controlId='confirmPassword' size='lg' className='group'>
         <Form.Label>{uiText.confirmPass}</Form.Label>
