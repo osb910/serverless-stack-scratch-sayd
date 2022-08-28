@@ -27,3 +27,7 @@
   src: local('adwa-assalaf'),
     url('./assets/fonts/adwa-assalaf.ttf') format('truetype');
 }
+
+.vsc-controller {
+  display: none;
+}
